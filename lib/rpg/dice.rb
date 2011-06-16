@@ -5,21 +5,14 @@ module RPG
       sum = mod.nil? ? 0 : mod
       rolls = []
       if rtype == :dice
-        num.times do 
-          rolls << (rand(dtype)+1)
-        end
+        num.times { rolls << (rand(dtype)+1) }
         sum += rolls.inject(:+)
         puts "#{dice} = #{sum} '#{rolls}'"
       elsif rtype == :keep
-        num.times do
-          rolls << (rand(6)+1)
-        end
+        num.times { rolls << (rand(6)+1) }
         rolls.sort! {|x,y| y <=> x }
         kept = []
-        dtype.times do |n|
-          puts n
-          kept << rolls[n]
-        end
+        dtype.times { |n| kept << rolls[n] }
         sum += kept.inject(:+)
         puts "#{dice} = #{sum} '#{rolls}'"
       end
