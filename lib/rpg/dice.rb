@@ -9,7 +9,7 @@ module RPG
           rolls << (rand(dtype)+1)
         end
         sum += rolls.inject(:+)
-        puts "#{dice} = #{sum} '#{rolls}'"
+        puts "#{dice} = #{sum} '#{rolls}'" if RPG.debug
       elsif rtype == :keep
         num.times do
           rolls << (rand(6)+1)
@@ -21,7 +21,7 @@ module RPG
           kept << rolls[n]
         end
         sum += kept.inject(:+)
-        puts "#{dice} = #{sum} '#{rolls}'"
+        puts "#{dice} = #{sum} '#{rolls}'" if RPG.debug
       end
       return sum
     end

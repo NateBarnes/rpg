@@ -1,10 +1,14 @@
 module RPG
   class Combat
-    @actionorder = {}
+    @actionorder = []
     @env = {}
     
     def initialize combatants = []
       roll_initiative combatants
+    end
+    
+    def act action, target
+      
     end
     
   private
